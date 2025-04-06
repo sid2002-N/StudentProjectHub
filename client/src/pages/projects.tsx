@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProjectCard from "@/components/project-card";
 import ProjectModal from "@/components/project-modal";
 import { projects } from "@/lib/projects-data";
+import CyberBackground from "@/components/three/CyberBackground";
 
 type FilterType = 'all' | 'ml' | 'web' | 'data' | 'auto';
 
@@ -26,8 +27,9 @@ export default function Projects() {
   };
 
   return (
-    <section className="py-20 bg-zinc-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-zinc-900 relative overflow-hidden">
+      <CyberBackground />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-cyber font-bold mb-4">
             <span className="text-white">Recent </span>
