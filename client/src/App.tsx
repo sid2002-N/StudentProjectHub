@@ -10,6 +10,7 @@ import Projects from "@/pages/projects";
 import Pricing from "@/pages/pricing";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import AIGenerator from "@/pages/ai-generator";
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/ai-generator" component={AIGenerator} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -53,6 +53,19 @@ export default function Navbar() {
             <NavLink href="/pricing" currentPath={location}>PRICING</NavLink>
             <NavLink href="/about" currentPath={location}>ABOUT</NavLink>
             <NavLink href="/contact" currentPath={location}>CONTACT</NavLink>
+            <NavLink href="/ai-generator" currentPath={location}>
+              <span className="flex items-center">
+                <span className="relative">
+                  AI GENERATOR
+                  <span className="absolute -top-2 -right-6 flex">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(300,100%,50%)] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[hsl(300,100%,70%)]"></span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </NavLink>
           </div>
           
           {/* Mobile Menu Button */}
@@ -86,6 +99,15 @@ export default function Navbar() {
                     </Link>
                     <Link href="/contact">
                       <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>CONTACT</a>
+                    </Link>
+                    <Link href="/ai-generator">
+                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1 flex items-center" onClick={() => setIsOpen(false)}>
+                        <span>AI GENERATOR</span>
+                        <span className="ml-2 relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(300,100%,50%)] opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-[hsl(300,100%,70%)]"></span>
+                        </span>
+                      </a>
                     </Link>
                   </nav>
                   <div className="pt-6 mt-6 border-t border-gray-700">
