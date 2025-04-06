@@ -98,9 +98,9 @@ export default function PriceCard({
       
       <div className="text-center">
         <Link href="/contact">
-          <a className={`block w-full py-3 px-4 ${colorClasses.buttonBg} ${colorClasses.buttonText} font-cyber uppercase tracking-wider transition duration-300 rounded`}>
+          <div className={`block w-full py-3 px-4 ${colorClasses.buttonBg} ${colorClasses.buttonText} font-cyber uppercase tracking-wider transition duration-300 rounded`}>
             Get Started
-          </a>
+          </div>
         </Link>
       </div>
     </div>

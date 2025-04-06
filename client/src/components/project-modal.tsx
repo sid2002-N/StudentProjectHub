@@ -132,9 +132,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </ul>
               </div>
               <Link href="/contact">
-                <a className="relative inline-block px-6 py-3 bg-zinc-800 text-[hsl(174,100%,50%)] font-cyber uppercase tracking-wider hover:bg-zinc-700 transition duration-300 border border-[hsl(174,100%,50%)]/50 shadow-[0_0_5px_rgba(12,255,225,0.5),inset_0_0_5px_rgba(12,255,225,0.2)] rounded">
+                <div className="relative inline-block px-6 py-3 bg-zinc-800 text-[hsl(174,100%,50%)] font-cyber uppercase tracking-wider hover:bg-zinc-700 transition duration-300 border border-[hsl(174,100%,50%)]/50 shadow-[0_0_5px_rgba(12,255,225,0.5),inset_0_0_5px_rgba(12,255,225,0.2)] rounded">
                   Request Similar Project
-                </a>
+                </div>
               </Link>
             </div>
           </div>

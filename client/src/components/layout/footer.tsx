@@ -34,22 +34,22 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-cyber font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Home</a></Link></li>
-              <li><Link href="/projects"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Projects</a></Link></li>
-              <li><Link href="/pricing"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Pricing</a></Link></li>
-              <li><Link href="/about"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">About</a></Link></li>
-              <li><Link href="/contact"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Contact</a></Link></li>
+              <li><Link href="/"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Home</div></Link></li>
+              <li><Link href="/projects"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Projects</div></Link></li>
+              <li><Link href="/pricing"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Pricing</div></Link></li>
+              <li><Link href="/about"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">About</div></Link></li>
+              <li><Link href="/contact"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Contact</div></Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-cyber font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/projects"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Web Development</a></Link></li>
-              <li><Link href="/projects"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Machine Learning</a></Link></li>
-              <li><Link href="/projects"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Data Analysis</a></Link></li>
-              <li><Link href="/projects"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Automation</a></Link></li>
-              <li><Link href="/contact"><a className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Custom Solutions</a></Link></li>
+              <li><Link href="/projects"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Web Development</div></Link></li>
+              <li><Link href="/projects"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Machine Learning</div></Link></li>
+              <li><Link href="/projects"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Data Analysis</div></Link></li>
+              <li><Link href="/projects"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Automation</div></Link></li>
+              <li><Link href="/contact"><div className="text-gray-400 hover:text-[hsl(174,100%,50%)] transition">Custom Solutions</div></Link></li>
             </ul>
           </div>
         </div>

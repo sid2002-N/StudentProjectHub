@@ -54,21 +54,21 @@ export default function Logo({ className }: LogoProps) {
           <line x1="0" y1="56" x2="64" y2="56" />
         </g>
         
-        {/* Main "CP" letters (for CyberPort or CyberProject) */}
+        {/* Main "TP" letters (for TechProjects) */}
         <g filter="url(#glow)">
-          {/* C letter */}
-          <path d="M18 18 L18 46 L34 46" stroke="url(#neonGradient)" fill="none" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          {/* T letter */}
+          <path d="M18 18 L46 18 M32 18 L32 46" stroke="url(#neonGradient)" fill="none" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           
-          {/* P letter */}
-          <path d="M36 18 L36 46 M36 18 L48 18 C53 18 53 32 48 32 L36 32" stroke="url(#neonGradient)" fill="none" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          {/* P letter part of logo */}
+          <path d="M36 28 L36 46 M36 28 L48 28 C52 28 52 38 48 38 L36 38" stroke="url(#neonGradient)" fill="none" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </g>
         
         {/* Circuit board node points */}
         <circle cx="18" cy="18" r="2" fill="#00ffff" />
-        <circle cx="34" cy="46" r="2" fill="#ff00ff" />
-        <circle cx="36" cy="32" r="2" fill="#00ffff" />
-        <circle cx="48" cy="18" r="2" fill="#ff00ff" />
-        <circle cx="36" cy="46" r="2" fill="#00ffff" />
+        <circle cx="46" cy="18" r="2" fill="#ff00ff" />
+        <circle cx="32" cy="46" r="2" fill="#00ffff" />
+        <circle cx="36" cy="38" r="2" fill="#ff00ff" />
+        <circle cx="48" cy="28" r="2" fill="#00ffff" />
         
         {/* Digital artifacts */}
         <rect x="12" y="26" width="3" height="1" fill="#00ffff" opacity="0.8" />
@@ -77,7 +77,7 @@ export default function Logo({ className }: LogoProps) {
         <rect x="42" y="52" width="1" height="3" fill="#ff00ff" opacity="0.8" />
       </svg>
       <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-pink-600 text-transparent bg-clip-text">
-        CyberProject
+        TechProjects
       </span>
     </div>
   );
