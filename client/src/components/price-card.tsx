@@ -81,7 +81,7 @@ export default function PriceCard({
         <h3 className="text-3xl font-cyber font-bold text-white mb-4">{title}</h3>
         <div className="flex items-center justify-center">
           <span className="text-sm text-gray-400 mr-2">From</span>
-          <span className={`text-4xl font-cyber font-bold blur-sm ${colorClasses.text}`}>{price}</span>
+          <span className={`text-4xl font-cyber font-bold ${colorClasses.text}`}>{price}</span>
           <span className="text-sm bg-zinc-800 px-2 py-1 ml-3 text-white rounded-full">Contact for pricing</span>
         </div>
         <p className="text-gray-400 mt-2 text-sm">{description}</p>

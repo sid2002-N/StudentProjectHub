@@ -22,7 +22,7 @@ export default function Pricing() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <PriceCard 
             title="Standard Projects"
-            price="₹7,999"
+            price="₹*****"
             description="Perfect for simple assignments"
             features={[
               "Simple web applications",
@@ -37,7 +37,7 @@ export default function Pricing() {
           
           <PriceCard 
             title="Complex Projects"
-            price="₹19,999"
+            price="₹******"
             description="Ideal for detailed assignments"
             features={[
               "Full-stack web applications",
@@ -54,7 +54,7 @@ export default function Pricing() {
           
           <PriceCard 
             title="Expert Projects"
-            price="₹39,999"
+            price="₹*******"
             description="For comprehensive solutions"
             features={[
               "Enterprise-level applications",
