@@ -20,10 +20,11 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { Loader2, AlertCircle, Sparkles } from "lucide-react";
+import { Loader2, AlertCircle, Sparkles, Save, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useToast } from "@/hooks/use-toast";
+import { useQueryClient } from "@tanstack/react-query";
 
 // Create a custom API request function for our component
 const apiRequest = async (url: string, options: RequestInit): Promise<any> => {
@@ -71,6 +72,7 @@ export default function AIDescriptionGenerator({
   className = "",
 }: AIDescriptionGeneratorProps) {
   const { toast } = useToast();
+  const queryClient = useQueryClient();
   const [title, setTitle] = useState("");
   const [projectType, setProjectType] = useState<string>("");
   const [selectedTech, setSelectedTech] = useState<string[]>([]);
@@ -78,11 +80,13 @@ export default function AIDescriptionGenerator({
   const [customTech, setCustomTech] = useState("");
   const [customFeature, setCustomFeature] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [generatedDescription, setGeneratedDescription] = useState<{
     shortDescription: string;
     description: string;
   } | null>(null);
+  const [descriptionSaved, setDescriptionSaved] = useState(false);
 
   const toggleTech = (tech: string) => {
     if (selectedTech.includes(tech)) {
@@ -147,6 +151,7 @@ export default function AIDescriptionGenerator({
 
     setIsGenerating(true);
     setError(null);
+    setDescriptionSaved(false);
 
     try {
       const result = await apiRequest("/api/generate-description", {
@@ -183,6 +188,51 @@ export default function AIDescriptionGenerator({
       });
     } finally {
       setIsGenerating(false);
+    }
+  };
+  
+  const saveDescription = async () => {
+    if (!generatedDescription) return;
+    
+    setIsSaving(true);
+    setError(null);
+    
+    try {
+      await apiRequest("/api/save-generated-description", {
+        method: "POST",
+        body: JSON.stringify({
+          shortDescription: generatedDescription.shortDescription,
+          description: generatedDescription.description,
+          projectTitle: title,
+          projectType,
+          technologies: selectedTech,
+          features: selectedFeatures,
+        }),
+      });
+      
+      setDescriptionSaved(true);
+      
+      // Invalidate the query to refresh the saved descriptions list
+      queryClient.invalidateQueries({ queryKey: ['/api/generated-descriptions'] });
+      
+      toast({
+        title: "Description saved successfully",
+        description: "You can view it in the saved descriptions section",
+      });
+    } catch (err) {
+      console.error("Error saving description:", err);
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Failed to save description. Please try again."
+      );
+      toast({
+        variant: "destructive",
+        title: "Save failed",
+        description: "Could not save the project description",
+      });
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -371,28 +421,61 @@ export default function AIDescriptionGenerator({
             setSelectedFeatures([]);
             setGeneratedDescription(null);
             setError(null);
+            setDescriptionSaved(false);
           }}
           className="border-zinc-700 hover:bg-zinc-800"
         >
           Reset
         </Button>
-        <Button
-          onClick={generateDescription}
-          disabled={isGenerating}
-          className="bg-gradient-to-r from-[hsl(174,100%,40%)] to-[hsl(174,100%,30%)] hover:from-[hsl(174,100%,35%)] hover:to-[hsl(174,100%,25%)] text-white border-none"
-        >
-          {isGenerating ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Generating...
-            </>
-          ) : (
-            <>
-              <Sparkles className="mr-2 h-4 w-4" />
-              Generate Description
-            </>
+        
+        <div className="flex gap-2">
+          {generatedDescription && (
+            <Button
+              onClick={saveDescription}
+              disabled={isSaving || descriptionSaved}
+              className={`bg-gradient-to-r ${
+                descriptionSaved 
+                  ? "from-emerald-600 to-emerald-700 cursor-not-allowed"
+                  : "from-[hsl(300,100%,40%)] to-[hsl(300,100%,30%)] hover:from-[hsl(300,100%,35%)] hover:to-[hsl(300,100%,25%)]"
+              } text-white border-none`}
+            >
+              {isSaving ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Saving...
+                </>
+              ) : descriptionSaved ? (
+                <>
+                  <Check className="mr-2 h-4 w-4" />
+                  Saved
+                </>
+              ) : (
+                <>
+                  <Save className="mr-2 h-4 w-4" />
+                  Save Description
+                </>
+              )}
+            </Button>
           )}
-        </Button>
+          
+          <Button
+            onClick={generateDescription}
+            disabled={isGenerating}
+            className="bg-gradient-to-r from-[hsl(174,100%,40%)] to-[hsl(174,100%,30%)] hover:from-[hsl(174,100%,35%)] hover:to-[hsl(174,100%,25%)] text-white border-none"
+          >
+            {isGenerating ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <Sparkles className="mr-2 h-4 w-4" />
+                Generate Description
+              </>
+            )}
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   );

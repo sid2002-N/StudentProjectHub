@@ -1,8 +1,9 @@
 import React from "react";
 import AIDescriptionGenerator from "@/components/ai-description-generator";
+import SavedDescriptions from "@/components/saved-descriptions";
 import CyberBackground from "@/components/three/CyberBackground";
 import { motion } from "framer-motion";
-import { Sparkles, Bot, Cpu, Code, Network } from "lucide-react";
+import { Sparkles, Bot, Cpu, Code, Network, Database } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function AIGenerator() {
@@ -88,6 +89,27 @@ export default function AIGenerator() {
               </ol>
             </div>
           </div>
+        </motion.div>
+        
+        {/* Saved Descriptions */}
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 rounded-lg p-6 max-w-4xl mx-auto mb-8">
+            <div className="flex items-center gap-4 mb-4">
+              <Database className="w-8 h-8 text-[hsl(174,100%,50%)]" />
+              <h2 className="font-cyber text-2xl text-white">Database Storage</h2>
+            </div>
+            <p className="text-zinc-400 mb-4">
+              All your generated descriptions are now automatically saved to our PostgreSQL database.
+              This feature allows you to retrieve your past work and reuse descriptions for future projects.
+            </p>
+          </div>
+          
+          <SavedDescriptions />
         </motion.div>
       </div>
     </section>
