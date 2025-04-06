@@ -177,6 +177,7 @@ export default function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-zinc-800 border border-gray-700">
+                  <SelectItem value="mini">Mini Project/Assignment</SelectItem>
                   <SelectItem value="web">Web Development</SelectItem>
                   <SelectItem value="fullstack">Full Stack Web Development</SelectItem>
                   <SelectItem value="ml">Machine Learning</SelectItem>

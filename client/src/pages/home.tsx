@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import StatsCard from "@/components/stats-card";
+import { Code, FileCode, Database, Brain } from "lucide-react";
 
 export default function Home() {
   return (
@@ -17,10 +18,10 @@ export default function Home() {
                 <span className="text-[hsl(174,100%,50%)] animate-pulse">College Projects</span>
               </h1>
               <h2 className="text-2xl md:text-3xl font-cyber text-[hsl(300,100%,50%)] mb-6">
-                Full Stack Web • Data Science • AI • Dev
+                Mini Projects • Full Stack • Data Science • AI
               </h2>
               <p className="text-gray-300 text-lg mb-8">
-                Expert development services for students requiring high-quality, custom tech projects. From complex ML models to responsive web applications, I deliver professional solutions to help you excel.
+                Expert development services for students requiring high-quality, custom tech projects. From mini assignments and bug fixes to complex ML models and responsive web applications, I deliver professional solutions to help you excel.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link href="/projects">
@@ -54,6 +55,64 @@ export default function Home() {
             <StatsCard value="100%" label="Satisfaction Rate" color="pink" />
             <StatsCard value="10+" label="Technologies" color="yellow" />
             <StatsCard value="24h" label="Response Time" color="cyan" />
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-zinc-900/30 backdrop-blur-sm">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-cyber font-bold text-white mb-8 text-center">
+            My Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-zinc-900/40 backdrop-blur-sm p-8 rounded-lg border border-white/5 hover:border-cyan-500/40 transition duration-300 group">
+              <div className="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition duration-300">
+                <span className="text-cyan-500 text-2xl">
+                  <FileCode className="w-8 h-8" />
+                </span>
+              </div>
+              <h3 className="text-xl font-cyber font-bold text-white mb-4">Mini Projects</h3>
+              <p className="text-gray-400">
+                Quick assistance for small assignments, bug fixes, and script customization. Perfect for students with tight deadlines or specific coding challenges.
+              </p>
+            </div>
+
+            <div className="bg-zinc-900/40 backdrop-blur-sm p-8 rounded-lg border border-white/5 hover:border-cyan-500/40 transition duration-300 group">
+              <div className="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition duration-300">
+                <span className="text-cyan-500 text-2xl">
+                  <Code className="w-8 h-8" />
+                </span>
+              </div>
+              <h3 className="text-xl font-cyber font-bold text-white mb-4">Web Development</h3>
+              <p className="text-gray-400">
+                Full stack web applications built with modern frameworks. From simple landing pages to complex data-driven applications.
+              </p>
+            </div>
+
+            <div className="bg-zinc-900/40 backdrop-blur-sm p-8 rounded-lg border border-white/5 hover:border-pink-500/40 transition duration-300 group">
+              <div className="w-16 h-16 bg-pink-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition duration-300">
+                <span className="text-pink-500 text-2xl">
+                  <Database className="w-8 h-8" />
+                </span>
+              </div>
+              <h3 className="text-xl font-cyber font-bold text-white mb-4">Data Science</h3>
+              <p className="text-gray-400">
+                Data analysis, visualization, and insights. Using Python, pandas, and visualization libraries to extract meaning from complex datasets.
+              </p>
+            </div>
+
+            <div className="bg-zinc-900/40 backdrop-blur-sm p-8 rounded-lg border border-white/5 hover:border-yellow-500/40 transition duration-300 group">
+              <div className="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition duration-300">
+                <span className="text-yellow-500 text-2xl">
+                  <Brain className="w-8 h-8" />
+                </span>
+              </div>
+              <h3 className="text-xl font-cyber font-bold text-white mb-4">AI & ML</h3>
+              <p className="text-gray-400">
+                Machine learning models and artificial intelligence solutions. Using TensorFlow, PyTorch, and other frameworks to build intelligent systems.
+              </p>
+            </div>
           </div>
         </div>
       </section>
