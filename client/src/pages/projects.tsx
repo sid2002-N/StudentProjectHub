@@ -111,23 +111,30 @@ export default function Projects() {
               boxShadow: "0 0 8px rgba(12,255,225,0.7)",
               borderColor: "rgba(12,255,225,0.7)" 
             }}
+            initial={false}
+            animate={useHolographic ? 
+              { boxShadow: ["0 0 0px rgba(12,255,225,0.1)", "0 0 8px rgba(12,255,225,0.5)", "0 0 0px rgba(12,255,225,0.1)"] } : 
+              { boxShadow: "0 0 0px rgba(12,255,225,0)" }
+            }
+            transition={{ duration: 2, repeat: useHolographic ? Infinity : 0 }}
           >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[hsl(174,100%,50%)]/20 via-transparent to-[hsl(300,100%,50%)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <motion.div 
-              className="relative flex items-center gap-2"
-              initial={false}
-              animate={{ x: [0, 3, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
-            >
+            {/* Glowing background effect */}
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[hsl(174,100%,50%)]/10 via-transparent to-[hsl(300,100%,50%)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            
+            {/* Animated indicator */}
+            <div className="absolute top-0 left-0 bottom-0 w-1 bg-[hsl(174,100%,50%)] opacity-0 transition-opacity duration-300 group-hover:opacity-60"></div>
+            
+            <div className="relative flex items-center gap-2">
               <motion.span 
-                className={`w-3 h-3 rounded-full ${useHolographic ? "bg-[hsl(174,100%,50%)]" : "bg-white/50"} transition-colors duration-300`}
-                animate={useHolographic ? { 
-                  boxShadow: ["0 0 0px rgba(12,255,225,0)", "0 0 5px rgba(12,255,225,0.7)", "0 0 0px rgba(12,255,225,0)"] 
-                } : {}}
+                className={`w-3 h-3 rounded-full ${useHolographic ? "bg-[hsl(174,100%,50%)]" : "bg-white/30"} transition-colors duration-300`}
+                animate={useHolographic ? 
+                  { scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] } : 
+                  { scale: 1, opacity: 0.5 }
+                }
                 transition={{ duration: 1.5, repeat: useHolographic ? Infinity : 0 }}
               />
-              {useHolographic ? "Switch to Standard View" : "Switch to Holographic View"}
-            </motion.div>
+              {useHolographic ? "Standard View" : "Holographic View"}
+            </div>
           </motion.button>
         </div>
         
