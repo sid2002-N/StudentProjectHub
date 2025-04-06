@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
+import Logo from "./logo";
 
 const NavLink = ({ 
   href, 
@@ -39,11 +40,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/">
-              <a className="text-2xl font-cyber font-bold text-[hsl(174,100%,50%)] animate-pulse">
-                TECH<span className="text-[hsl(300,100%,50%)]">PROJECTS</span>
-              </a>
-            </Link>
+            <Logo />
           </div>
           
           {/* Desktop Navigation */}
@@ -79,7 +76,7 @@ export default function Navbar() {
               <SheetContent side="left" className="w-64 p-0 bg-zinc-900 border-r border-[hsl(174,100%,50%)]/20">
                 <div className="p-6 space-y-6">
                   <div className="flex justify-between items-center mb-6">
-                    <span className="text-xl font-cyber font-bold text-[hsl(174,100%,50%)]">MENU</span>
+                    <Logo className="scale-75 origin-left" />
                     <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                       <X className="h-6 w-6 text-white hover:text-[hsl(300,100%,50%)]" />
                     </Button>
