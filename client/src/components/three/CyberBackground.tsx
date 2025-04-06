@@ -17,8 +17,11 @@ export default function CyberBackground({ className = '' }: CyberBackgroundProps
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     
     const container = canvasRef.current;
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+    // Make sure we have dimensions
+    const containerWidth = container.clientWidth || window.innerWidth;
+    const containerHeight = container.clientHeight || window.innerHeight;
+    
+    console.log("Background dimensions:", containerWidth, containerHeight);
     
     renderer.setSize(containerWidth, containerHeight);
     renderer.setClearColor(0x000000, 0); // Transparent background

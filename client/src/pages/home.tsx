@@ -40,8 +40,8 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative rounded-lg overflow-hidden border border-[hsl(174,100%,50%)]/50 shadow-[0_0_5px_rgba(12,255,225,0.5),inset_0_0_5px_rgba(12,255,225,0.2)] aspect-[4/3] md:aspect-auto">
-              <div className="w-full h-full">
+            <div className="relative rounded-lg overflow-hidden border border-[hsl(174,100%,50%)]/50 shadow-[0_0_5px_rgba(12,255,225,0.5),inset_0_0_5px_rgba(12,255,225,0.2)] aspect-[4/3] md:h-[400px]">
+              <div className="w-full h-full" style={{ minHeight: '300px' }}>
                 <CyberCanvas className="w-full h-full" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-tr from-zinc-900/70 to-transparent pointer-events-none"></div>

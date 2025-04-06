@@ -13,12 +13,20 @@ export default function CyberCanvas({ className = '' }: CyberCanvasProps) {
     
     // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+      alpha: true, 
+      antialias: true 
+    });
     
     const container = canvasRef.current;
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+    const containerWidth = container.clientWidth || 300;
+    const containerHeight = container.clientHeight || 300;
+    
+    console.log("CyberCanvas dimensions:", containerWidth, containerHeight);
+    
+    camera.aspect = containerWidth / containerHeight;
+    camera.updateProjectionMatrix();
     
     renderer.setSize(containerWidth, containerHeight);
     renderer.setClearColor(0x000000, 0); // Transparent background
