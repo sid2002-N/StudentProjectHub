@@ -19,9 +19,9 @@ const NavLink = ({
   
   return (
     <Link href={href}>
-      <a className={`font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 ${isActive ? 'text-[hsl(174,100%,50%)]' : ''}`}>
+      <div className={`font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 ${isActive ? 'text-[hsl(174,100%,50%)]' : ''}`}>
         {children}
-      </a>
+      </div>
     </Link>
   );
 };
@@ -83,28 +83,28 @@ export default function Navbar() {
                   </div>
                   <nav className="flex flex-col space-y-5">
                     <Link href="/">
-                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>HOME</a>
+                      <div className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>HOME</div>
                     </Link>
                     <Link href="/projects">
-                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>PROJECTS</a>
+                      <div className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>PROJECTS</div>
                     </Link>
                     <Link href="/pricing">
-                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>PRICING</a>
+                      <div className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>PRICING</div>
                     </Link>
                     <Link href="/about">
-                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>ABOUT</a>
+                      <div className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>ABOUT</div>
                     </Link>
                     <Link href="/contact">
-                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>CONTACT</a>
+                      <div className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1" onClick={() => setIsOpen(false)}>CONTACT</div>
                     </Link>
                     <Link href="/ai-generator">
-                      <a className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1 flex items-center" onClick={() => setIsOpen(false)}>
+                      <div className="font-cyber text-white hover:text-[hsl(174,100%,50%)] transition duration-300 py-1 flex items-center" onClick={() => setIsOpen(false)}>
                         <span>AI GENERATOR</span>
                         <span className="ml-2 relative flex h-2 w-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(300,100%,50%)] opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-[hsl(300,100%,70%)]"></span>
                         </span>
-                      </a>
+                      </div>
                     </Link>
                   </nav>
                   <div className="pt-6 mt-6 border-t border-gray-700">
