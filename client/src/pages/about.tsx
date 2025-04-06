@@ -14,22 +14,33 @@ export default function About() {
               I'm a Computer Science graduate with a BTech in CSE and specialized certification in Data Science & AI. My passion lies in helping students complete challenging technical projects with professional quality and attention to detail.
             </p>
             <p className="text-gray-300 mb-6">
-              With expertise across multiple domains including web development, machine learning, data analysis, and automation, I provide comprehensive solutions tailored to your academic needs.
+              With expertise across multiple domains including full stack web development, machine learning, data analysis, and automation, I provide comprehensive solutions tailored to your academic needs.
+            </p>
+            <p className="text-gray-300 mb-6">
+              My full stack development services include both frontend (React, Angular, Vue) and backend (Node.js, Express, MongoDB, SQL) technologies to deliver complete web solutions from concept to deployment.
             </p>
             
             <div className="mb-8">
               <h3 className="text-[hsl(174,100%,50%)] font-cyber text-xl mb-4">Technical Expertise</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Python</span>
-                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">JavaScript</span>
                 <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">React</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Angular</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Vue.js</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">JavaScript</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">TypeScript</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Node.js</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Express</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">MongoDB</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">SQL</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">PostgreSQL</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Python</span>
                 <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">TensorFlow</span>
                 <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">PyTorch</span>
-                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">SQL</span>
-                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">NoSQL</span>
-                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Node.js</span>
-                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Data Visualization</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Django</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Flask</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Next.js</span>
                 <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">AWS</span>
+                <span className="px-3 py-1 bg-zinc-700 text-white text-sm rounded-full">Docker</span>
               </div>
             </div>
             

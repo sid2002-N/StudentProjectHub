@@ -14,14 +14,15 @@ export default function Pricing() {
             <span className="text-[hsl(60,100%,50%)]">Pricing Packages</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Choose the package that fits your project needs. All packages include full documentation and support.
+            Choose the package that fits your project needs. All packages include full documentation and support. 
+            Actual pricing varies based on project specifics - contact us for an accurate quote.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <PriceCard 
             title="Standard Projects"
-            price="$99"
+            price="₹7,999"
             description="Perfect for simple assignments"
             features={[
               "Simple web applications",
@@ -36,7 +37,7 @@ export default function Pricing() {
           
           <PriceCard 
             title="Complex Projects"
-            price="$249"
+            price="₹19,999"
             description="Ideal for detailed assignments"
             features={[
               "Full-stack web applications",
@@ -53,12 +54,12 @@ export default function Pricing() {
           
           <PriceCard 
             title="Expert Projects"
-            price="$499"
+            price="₹39,999"
             description="For comprehensive solutions"
             features={[
               "Enterprise-level applications",
               "Advanced AI/Deep Learning",
-              "Big data processing systems",
+              "Full Stack Web Development",
               "21-day delivery",
               "Unlimited revisions"
             ]}

@@ -178,6 +178,7 @@ export default function ContactForm() {
                 </FormControl>
                 <SelectContent className="bg-zinc-800 border border-gray-700">
                   <SelectItem value="web">Web Development</SelectItem>
+                  <SelectItem value="fullstack">Full Stack Web Development</SelectItem>
                   <SelectItem value="ml">Machine Learning</SelectItem>
                   <SelectItem value="data">Data Analysis</SelectItem>
                   <SelectItem value="automation">Automation</SelectItem>

@@ -17,7 +17,7 @@ export default function Home() {
                 <span className="text-[hsl(174,100%,50%)] animate-pulse">College Projects</span>
               </h1>
               <h2 className="text-2xl md:text-3xl font-cyber text-[hsl(300,100%,50%)] mb-6">
-                Data Science • AI • Web Dev & More
+                Full Stack Web • Data Science • AI • Dev
               </h2>
               <p className="text-gray-300 text-lg mb-8">
                 Expert development services for students requiring high-quality, custom tech projects. From complex ML models to responsive web applications, I deliver professional solutions to help you excel.
