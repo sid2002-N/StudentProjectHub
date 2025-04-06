@@ -3,6 +3,9 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { generateProjectDescription } from "./openai";
 
+// Enable demo mode by default to ensure functionality even when API isn't working
+process.env.DEMO_MODE = "true";
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // AI Project Description Generator API
   app.post("/api/generate-description", async (req: Request, res: Response) => {
@@ -16,7 +19,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
       
-      // Generate description using OpenAI
+      // Generate description using OpenAI or fallback to demo descriptions
       const description = await generateProjectDescription(
         projectTitle,
         projectType,
@@ -32,6 +35,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: error instanceof Error ? error.message : "Unknown error" 
       });
     }
+  });
+  
+  // API endpoint to toggle demo mode (for future use when API key is valid)
+  app.post("/api/toggle-demo-mode", (req: Request, res: Response) => {
+    const { enabled } = req.body;
+    
+    if (typeof enabled !== 'boolean') {
+      return res.status(400).json({ error: "Invalid parameter - enabled must be a boolean" });
+    }
+    
+    process.env.DEMO_MODE = enabled ? "true" : "false";
+    
+    return res.json({ 
+      success: true, 
+      demoMode: enabled,
+      message: enabled 
+        ? "Demo mode enabled - using pre-built descriptions" 
+        : "Demo mode disabled - using OpenAI API"
+    });
   });
 
   const httpServer = createServer(app);
