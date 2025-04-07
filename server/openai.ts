@@ -1,8 +1,11 @@
 import OpenAI from "openai";
 
-// Initialize the OpenAI client with API key from environment variables
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-// the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
+// Initialize with Together AI endpoint
+const openai = new OpenAI({ 
+  baseURL: "https://api.together.xyz/v1",
+  apiKey: process.env.TOGETHER_API_KEY || "none", // Together AI requires an API key but offers free credits
+  defaultQuery: { model: "mistralai/Mixtral-8x7B-Instruct-v0.1" } // Free model
+});
 
 // Demo descriptions for when API calls fail
 const demoDescriptions = {
