@@ -122,6 +122,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     }
   });
+  
+  // Contact form submission endpoint
+  app.post("/api/contact", async (req: Request, res: Response) => {
+    try {
+      const { name, email, course, deadline, projectType, description, urgent } = req.body;
+      
+      // Store in database
+      const project = await storage.createProject({
+        title: `${name}'s ${projectType} Project`,
+        shortDescription: course || projectType,
+        description,
+        projectType,
+        technologies: [],
+        features: [],
+        categories: urgent ? ['urgent'] : [],
+        imageUrl: null,
+        deadline: deadline ? new Date(deadline) : null,
+        contactEmail: email,
+        contactName: name,
+      });
+      
+      return res.json({ success: true, project });
+    } catch (error) {
+      console.error("Error in contact form submission:", error);
+      return res.status(500).json({ 
+        error: "Failed to submit contact form",
+        message: error instanceof Error ? error.message : "Unknown error" 
+      });
+    }
+  });
+
+  // Get all project submissions with contact details
+  app.get("/api/submissions", async (_req: Request, res: Response) => {
+    try {
+      const submissions = await storage.getProjects();
+      return res.json(submissions);
+    } catch (error) {
+      console.error("Error fetching submissions:", error);
+      return res.status(500).json({ 
+        error: "Failed to fetch submissions",
+        message: error instanceof Error ? error.message : "Unknown error" 
+      });
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;

@@ -23,6 +23,8 @@ export const projects = pgTable("projects", {
   categories: text("categories").array(),
   imageUrl: text("image_url"),
   userId: integer("user_id").references(() => users.id),
+  contactName: text("contact_name"),
+  contactEmail: text("contact_email"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });

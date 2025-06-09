@@ -45,17 +45,33 @@ export default function ContactForm() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form data:", data);
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       form.reset();
-      
       toast({
         title: "Request Submitted",
         description: "Thank you for your project request. I'll get back to you within 24 hours.",
       });
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
