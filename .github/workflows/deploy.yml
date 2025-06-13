@@ -30,13 +30,8 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
-      - name: Setup Pages
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}      - name: Setup Pages
         uses: actions/configure-pages@v3
-
-      - name: Create CNAME file
-        run: echo "projecthub2.com" > ./dist/public/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
